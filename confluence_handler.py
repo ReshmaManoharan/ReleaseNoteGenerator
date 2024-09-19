@@ -1,5 +1,6 @@
 from atlassian import Confluence
 import logging
+import os
 from summarizecommits import SummarizeCommits
 
 # Configure logging
@@ -14,7 +15,7 @@ class ConfluenceHandler:
         Initializes the confluence client
         """
         #For now, the arguments are hardcoded, but it can be passed
-        self.confluence = Confluence(url='https://confluence-use.atlassian.net', username="reshmams395@gmail.com", password="ATATT3xFfGF0tPSjSxJxV9bRSiMSvb21fc9PdkLQYIx3Hgx0NtdykjPR7WX6-fJ7A7lc1M-b2hQQEBRfRQ8WUERB3QqlxzbXWPLeWKVUtAvR-qcqUEkGmXiJNqFPhirh8b92vWpw3LRLxxzkwp-zIiO-vS3j7jI5_AIE9uBd7sXSDtAgjnHGu7E=1974C899",
+        self.confluence = Confluence(url='https://confluence-use.atlassian.net', username="reshmams395@gmail.com", password=os.getenv("CONFLUENCE_TOKEN"),
                         cloud=True)
         self.prompt = "Generate release notes summary strictly based on the following commits. provide response in markdown format\n"
 
@@ -114,6 +115,7 @@ class ConfluenceHandler:
         except Exception as err:
             if "A page with this title already exists" in str(err):
                 logging.error("Page already exists !!. Please delete and recreate the page")
+            logging.error(err)
 
 if __name__ == '__main__':
     c = ConfluenceHandler()
