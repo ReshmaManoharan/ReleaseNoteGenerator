@@ -1,1 +1,5 @@
+# python > 3.12
+pytest==8.3.3
+atlassian-python-api==3.41.16
+google-generativeai==0.8.1
 
