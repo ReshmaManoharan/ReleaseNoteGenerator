@@ -86,8 +86,8 @@ class ConfluenceHandler:
             <h3> Package Details: <h3>
             <p>""" +  package_info \
             + """</p>
-            <h3> Summary: <h3>
-            <p>""" +  AI Summary \
+            <h3> AI Summary: <h3>
+            <p>""" +  summary \
             + """</p>
             <h3>Commit History: </h3>
             <table>
