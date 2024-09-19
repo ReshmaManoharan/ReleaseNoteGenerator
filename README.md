@@ -16,7 +16,8 @@ This project automates the creation of release notes in Confluence based on Git 
 - pip install -r requirements.txt
 - python release_notes_generator.py
 - Check the confluence for your new release notes. [Sample ReleaseNotes](https://confluence-use.atlassian.net/l/cp/WSVdMpaP)
-- To re-run for another repo or list of repo. Update the variable **repos** in file release_notes_generator.py  
+- To re-run for another repo or list of repo. Update the variable **repos** in file release_notes_generator.py
+- To execute test, pytest test.py
 
 ## Tech Stack
 
